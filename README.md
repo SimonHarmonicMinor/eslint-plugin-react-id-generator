@@ -1,0 +1,1 @@
+# eslint-react-id-generator-plugin
