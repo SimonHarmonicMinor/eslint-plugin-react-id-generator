@@ -1,13 +1,14 @@
 {
   "name": "eslint-plugin-react-id-generator",
-  "version": "0.0.0",
-  "description": "s",
+  "version": "1.0.0",
+  "description": "Auto generated id values for jsx expressions.",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
   "author": "Simon Kirekov",
+  "homepage": "https://github.com/SimonHarmonicMinor/eslint-plugin-react-id-generator",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests/lib/rules --recursive"
