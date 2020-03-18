@@ -26,7 +26,7 @@ Basic configuration of `.eslintrc` looks like this
     "react-id-generator"
   },
   "rules": {
-    "jsx-id": "error"
+    "react-id-generator/jsx-id": "error"
   }
 }
 ```
