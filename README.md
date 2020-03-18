@@ -65,7 +65,7 @@ Rule might be customized.
 }
 ```
 
-The same fix with such configuration will be different.
+The fix with such configuration will be different.
 
 ```jsx harmony
 <MyComponent numVal={1} strVal="Michael" my-id />
