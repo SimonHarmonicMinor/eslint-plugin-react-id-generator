@@ -52,25 +52,29 @@ ruleTester.run("jsx-id", rule, {
     },
     {
       code: '<IsGonna tt={[1, 2, 3, identifier, [0, 1], {a: 1}]} nn={14} qa-id>SomeValue</IsGonna>',
-      options: [{prefix: 'prefix'}],
+      options: [{prefix: 'prefix', hashMaxLength: 6}],
       errors: [{
         line: 1,
         column: 61
       }],
-      output: `<IsGonna tt={[1, 2, 3, identifier, [0, 1], {a: 1}]} nn={14} qa-id="prefix_${md5(
-          'IsGonna_tt_[1, 2, 3, identifier, [0, 1], OBJECT_EXPRESSION_VALUE],nn_14,qa-id_null_false'
-      )}">SomeValue</IsGonna>`,
+      output: `<IsGonna tt={[1, 2, 3, identifier, [0, 1], {a: 1}]} nn={14} qa-id="prefix_${
+          md5(
+              'IsGonna_tt_[1, 2, 3, identifier, [0, 1], OBJECT_EXPRESSION_VALUE],nn_14,qa-id_null_false'
+          ).substring(0, 6)
+      }">SomeValue</IsGonna>`,
     },
     {
       code: '<Roll ut="good" my-id />',
-      options: [{prefix: 'my-id', attribute: 'my-id', divider: '@'}],
+      options: [{prefix: 'my-id', attribute: 'my-id', divider: '@', hashMaxLength: 12}],
       errors: [{
         line: 1,
         column: 17
       }],
-      output: `<Roll ut="good" my-id="my-id@${md5(
-          'Roll_ut_"good",my-id_null_true'
-      )}" />`,
+      output: `<Roll ut="good" my-id="my-id@${
+          md5(
+              'Roll_ut_"good",my-id_null_true'
+          ).substring(0, 12)
+      }" />`,
     },
     {
       code: '<Me textVal="yo man" numVal={69.96} qa-id>Yellow bus</Me>',
@@ -78,9 +82,12 @@ ruleTester.run("jsx-id", rule, {
         line: 1,
         column: 37
       }],
-      output: `<Me textVal="yo man" numVal={69.96} qa-id="qa-id_${md5(
-          'Me_textVal_"yo man",numVal_69.96,qa-id_null_false'
-      )}">Yellow bus</Me>`,
+      options: [{hashMaxLength: 18}],
+      output: `<Me textVal="yo man" numVal={69.96} qa-id="qa-id_${
+          md5(
+              'Me_textVal_"yo man",numVal_69.96,qa-id_null_false'
+          ).substring(0, 18)
+      }">Yellow bus</Me>`,
     }
   ]
 });
