@@ -16,6 +16,7 @@ npm install eslint-plugin-react-id-generator --save-dev
 ```
 
 ## Status
+![npm](https://img.shields.io/npm/v/eslint-plugin-react-id-generator)
 [![Build Status](https://travis-ci.com/SimonHarmonicMinor/eslint-plugin-react-id-generator.svg?branch=master)](https://travis-ci.com/SimonHarmonicMinor/eslint-plugin-react-id-generator)
 
 ## Usage
