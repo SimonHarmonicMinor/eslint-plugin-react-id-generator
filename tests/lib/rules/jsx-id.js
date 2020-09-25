@@ -37,6 +37,16 @@ ruleTester.run("jsx-id", rule, {
       code: '<Me qa-id val="" isDisabled otherVal={222} />',
       options: [{attribute: 'text-id'}]
     },
+    {
+      code: '<MyComp {...props} />'
+    },
+    {
+      code: '<MyAnotherComp {...props} qa-id="asdasd" />'
+    },
+    {
+      code: '<MyAnotherComp2 {...props} qa-id="asdasd" />',
+      options: [{attribute: 'data-test-id'}]
+    }
   ],
 
   invalid: [
