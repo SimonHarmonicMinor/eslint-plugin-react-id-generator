@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-id-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auto generated id values for jsx expressions.",
   "keywords": [
     "eslint",
